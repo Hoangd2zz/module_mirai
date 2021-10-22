@@ -31,8 +31,8 @@ module.exports.run = function({ api, event, client, __GLOBAL }) { }
 module.exports.handleEvent = async function({ api, event, Users }) {
   var name = (await Users.getData(event.senderID)).name
   const moment = require("moment-timezone");
-  var gio = moment.tz("Asia/Ho_Chi_Minh").format("HH:mm:ss"); // get time hien tai
-  let random = Math.floor(Math.random() * 3) + 1;//random file cache
+  var gio = moment.tz("Asia/Ho_Chi_Minh").format("HH:mm:ss"); 
+  let random = Math.floor(Math.random() * 3) + 1;
   var { threadID, messageID } = event;
 
   var tl = ["Bot cũng đi đây!","Chào cậu nháaa","Chào cậu, tớ cũng đi đây!","Bai cậu, tí mình gặp lại sau nha >.<","Cút đi thg chó!"," đéo tiễn 😏","Tạm biệt, hẹn k gặp lại mày!"];
@@ -42,7 +42,7 @@ module.exports.handleEvent = async function({ api, event, Users }) {
     var msg = {
       body: rand + "\n"+ gio + " rồi đó!\n" + "Goodbye " + name,
       attachment: fs.createReadStream(__dirname + `/cache/byebye${random}.gif`)
-    }//dán link ảnh trong cache vào
+    }
     return api.sendMessage(msg, threadID, messageID);
   };
 
