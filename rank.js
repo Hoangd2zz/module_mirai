@@ -27,7 +27,7 @@ module.exports.onLoad = async function () {
 	if (!existsSync(resolve(__dirname, 'cache', 'rankcard1.png'))) await downloadFile ("https://i.imgur.com/ciPIvFk.png", resolve(__dirname, 'cache', 'rankcard1.png'));
   if (!existsSync(resolve(__dirname, 'cache', 'rankcard2.png'))) await downloadFile("https://i.imgur.com/8ghhGmd.png", resolve(__dirname, 'cache', 'rankcard2.png'));
   if (!existsSync(resolve(__dirname, 'cache', 'rankcard3.png'))) await downloadFile("https://i.imgur.com/y9To0p6.png", resolve(__dirname, 'cache', 'rankcard3.png'));
-
+ //link rankcard có thể thêm hoặc thay tùy thích bằng cách up lên imgur rồi get link
 }
 
 //random color 
