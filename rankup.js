@@ -17,16 +17,16 @@ module.exports.config = {
 module.exports.onLoad = () => {
     const fs = require("fs-extra");
     const request = require("request");
-    const dirMaterial = __dirname + `/cache/rankup/`;// Thư mục dow về
+    const dirMaterial = __dirname + `/cache/rankup/`;
     if (!fs.existsSync(dirMaterial + "cache")) fs.mkdirSync(dirMaterial, { recursive: true });
-    if (!fs.existsSync(dirMaterial + "rankup1.gif")) request /*kiem tra file neu k co tu dong down ve */ 
-    ("https://i.imgur.com/guOlrA9.gif").pipe(fs.createWriteStream(dirMaterial + "rankup1.gif")); //link file & ten file khi luu ve
-    if (!fs.existsSync(dirMaterial + "rankup2.gif")) request /*kiem tra file neu k co tu dong down ve */ 
-    ("https://i.imgur.com/IhsfD9V.gif").pipe(fs.createWriteStream(dirMaterial + "rankup2.gif")); //link file & ten file khi luu ve
-    if (!fs.existsSync(dirMaterial + "rankup3.gif")) request /*kiem tra file neu k co tu dong down ve */ 
-    ("https://i.imgur.com/RioclTB.gif").pipe(fs.createWriteStream(dirMaterial + "rankup3.gif")); //link file & ten file khi luu ve
+    if (!fs.existsSync(dirMaterial + "rankup1.gif")) request 
+    ("https://i.imgur.com/guOlrA9.gif").pipe(fs.createWriteStream(dirMaterial + "rankup1.gif")); 
+    if (!fs.existsSync(dirMaterial + "rankup2.gif")) request  
+    ("https://i.imgur.com/IhsfD9V.gif").pipe(fs.createWriteStream(dirMaterial + "rankup2.gif")); 
+    if (!fs.existsSync(dirMaterial + "rankup3.gif")) request 
+    ("https://i.imgur.com/RioclTB.gif").pipe(fs.createWriteStream(dirMaterial + "rankup3.gif")); 
 }
-// Có sẵn hàm dowload cho newbie không biết thêm gif
+// Có sẵn hàm dowload cho gif
 module.exports.handleEvent = async function({ api, event, Currencies, Users, getText }) {
 	var {threadID, senderID } = event;
 	const { createReadStream, existsSync, mkdirSync } = global.nodemodule["fs-extra"];
